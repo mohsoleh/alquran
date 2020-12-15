@@ -1,0 +1,114 @@
+1|Al-Fatihah|الفاتحة|Pembukaan|7|Mekkah|5
+2|Al-Baqarah|البقرة|Sapi Betina|286|Madinah|87
+3|Ali 'Imran|آل عمران|Keluarga 'Imran|200|Madinah|89
+4|An-Nisa'|النّساء|Wanita|176|Madinah|92
+5|Al-Ma'idah|المائدة|Jamuan (hidangan makanan)|120|Madinah|112
+6|Al-An'am|الانعام|Hewan Ternak|165|Mekkah|55
+7|Al-A’raf|الأعراف|Tempat yang tertinggi|206|Mekkah|39
+8|Al-Anfal|الأنفال|Harta rampasan perang|75|Madinah|88
+9|At-Taubah|التوبة‎‎|Pengampunan|129|Madinah|113
+10|Yunus|يونس|Nabi Yunus|109|Mekkah|51
+11|Hud|هود|Nabi Hud|123|Mekkah|52
+12|Yusuf|يوسف|Nabi Yusuf|111|Mekkah|53
+13|Ar-Ra’d|الرعد|Guruh (petir)|43|Mekkah|96
+14|Ibrahim|إبراهيم|Nabi Ibrahim|52|Mekkah|72
+15|Al-Hijr|الحجر|Gunung Al Hijr|99|Mekkah|54
+16|An-Nahl|النحل|Lebah|128|Mekkah|70
+17|Al-Isra'|الإسراء|Perjalanan Malam|111|Mekkah|50
+18|Al-Kahf|الكهف|Penghuni-penghuni Gua|110|Mekkah|69
+19|Maryam|مريم|Maryam (Maria)|98|Mekkah|44
+20|Ta Ha|طه|Ta Ha|135|Mekkah|45
+21|Al-Anbiya|الأنبياء|Nabi-Nabi|112|Mekkah|73
+22|Al-Hajj|الحجّ|Haji|78|Madinah & Makkah|103
+23|Al-Mu’minun|المؤمنون|Orang-orang mukmin|118|Mekkah|74
+24|An-Nur|النور|Cahaya|64|Madinah|102
+25|Al-Furqan|الفرقان|Pembeda|77|Mekkah|42
+26|Asy-Syu'ara'|الشعراء|Penyair|227|Mekkah|47
+27|An-Naml|النمل|Semut|93|Mekkah|48
+28|Al-Qasas|القصص|Kisah|88|Mekkah|49
+29|Al-'Ankabut|العنكبوت|Laba-laba|69|Mekkah|85
+30|Ar-Rum|الروم|Bangsa Romawi|60|Mekkah|84
+31|Luqman|لقمان|Keluarga Luqman|34|Mekkah|57
+32|As-Sajdah|السجدة|Sajdah|30|Mekkah|75
+33|Al-Ahzab|الْأحزاب|Golongan-Golongan yang bersekutu|73|Madinah|90
+34|Saba’|سبأ|Kaum Saba'|54|Mekkah|58
+35|Fatir|فاطر|Pencipta|45|Mekkah|43
+36|Ya Sin|يس|Yaasiin|83|Mekkah|41
+37|As-Saffat|الصافات|Barisan-barisan|182|Mekkah|56
+38|Sad|ص|Shaad|88|Mekkah|38
+39|Az-Zumar|الزمر|Rombongan-rombongan|75|Mekkah|59
+40|Ghafir|غافر|Yang mengampuni|85|Mekkah|60
+41|Fussilat|فصلت|Yang dijelaskan|54|Mekkah|61
+42|Asy-Syura|الشورى|Musyawarah|53|Mekkah|62
+43|Az-Zukhruf|الزخرف|Perhiasan|89|Mekkah|63
+44|Ad-Dukhan|الدخان|Kabut|59|Mekkah|64
+45|Al-Jasiyah|الجاثية|Yang bertekuk lutut|37|Mekkah|65
+46|Al-Ahqaf|الَأحقاف|Bukit-bukit pasir|35|Mekkah|66
+47|Muhammad|محمد|Nabi Muhammad|38|Madinah|95
+48|Al-Fath|الفتح|Kemenangan|29|Madinah|111
+49|Al-Hujurat|الحجرات|Kamar-kamar|18|Madinah|106
+50|Qaf|ق|Qaaf45|Mekkah|34
+51|Az-Zariyat|الذاريات|Angin yang menerbangkan|60|Mekkah|67
+52|At-Tur|الطور|Bukit|49|Mekkah|76
+53|An-Najm|النجم|Bintang|62|Mekkah|23
+54|Al-Qamar|القمر|Bulan|55|Mekkah|37
+55|Ar-Rahman|الرحمن|Yang Maha Pemurah|78|Madinah & Mekkah|97
+56|Al-Waqi’ah|الواقعة|Hari Kiamat|96|Mekkah|46
+57|Al-Hadid|الحديد|Besi|29|Madinah|94
+58|Al-Mujadilah|المجادلة|Wanita yang mengajukan gugatan|22|Madinah|105
+59|Al-Hasyr|الحشر|Pengusiran|24|Madinah|101
+60|Al-Mumtahanah|الممتحنة|Wanita yang diuji|13|Madinah|91
+61|As-Saff|الصف|Satu barisan|14|Madinah|109
+62|Al-Jumu’ah|الجمعة|Hari Jum’at|11|Madinah|110
+63|Al-Munafiqun|المنافقون|Orang-orang yang munafik|11|Madinah|104
+64|At-Tagabun|التغابن|Hari dinampakkan kesalahan-kesalahan|18|Madinah|108
+65|At-Talaq|الطلاق|Talak|12|Madinah|99
+66|At-Tahrim|التحريم|Mengharamkan|12|Madinah|107
+67|Al-Mulk|الملك|Kerajaan|30|Mekkah|77
+68|Al-Qalam|القلم|Pena|52|Mekkah|2
+69|Al-Haqqah|الحآقة|Hari kiamat|52|Mekkah|78
+70|Al-Ma’arij|المعارج|Tempat naik|44|Mekkah|79
+71|Nuh|نوح|Nabi Nuh|28|Mekkah|71
+72|Al-Jinn|الجن|Jin|28|Mekkah|40
+73|Al-Muzzammil|المزمل|Orang yang berselimut|20|Mekkah|3
+74|Al-Muddassir|المدثر|Orang yang berkemul|56|Mekkah|4
+75|Al-Qiyamah|القيامة|Kiamat|40|Mekkah|31
+76|Al-Insan|الإنسان|Manusia|31|Madinah|98
+77|Al-Mursalat|المرسلات|Malaikat-Malaikat Yang Diutus|50|Mekkah|33
+78|An-Naba’|النبأ|Berita besar|40|Mekkah|80
+79|An-Nazi’at|النازعات|Malaikat-Malaikat Yang Mencabut|46|Mekkah|81
+80|'Abasa|عبس|Ia Bermuka masam|42|Mekkah|24
+81|At-Takwir|التكوير|Menggulung|29|Mekkah|7
+82|Al-Infitar|الإنفطار|Terbelah|19|Mekkah|82
+83|Al-Tatfif|المطففين|Orang-orang yang curang|36|Mekkah|86
+84|Al-Insyiqaq|الإنشقاق|Terbelah|25|Mekkah|83
+85|Al-Buruj|البروج|Gugusan bintang|22|Mekkah|27
+86|At-Tariq|الطارق|Yang datang di malam hari|17|Mekkah|36
+87|Al-A’la|الأعلى|Yang paling tinggi|19|Mekkah|8
+88|Al-Gasyiyah|الغاشية|Hari Pembalasan|26|Mekkah|68
+89|Al-Fajr|الفجر|Fajar|30|Mekkah|10
+90|Al-Balad|البلد|Negeri|20|Mekkah|35
+91|Asy-Syams|الشمس|Matahari|15|Mekkah|26
+92|Al-Lail|اليل|Malam|21|Mekkah|9
+93|Ad-Duha|الضحى‎‎|Waktu matahari sepenggalahan naik (Dhuha)|11|Mekkah|11
+94|Al-Insyirah|الإنشراح‎‎|Melapangkan|8|Mekkah|12
+95|At-Tin|التينِ|Buah Tin|8|Mekkah|28
+96|Al-'Alaq|العلق|Segumpal Darah|19|Mekkah|1
+97|Al-Qadr|القدرِ|Kemuliaan|5|Mekkah|25
+98|Al-Bayyinah|البينة|Pembuktian|8|Madinah|100
+99|Az-Zalzalah|الزلزلة‎‎|Kegoncangan|8|Madinah|93
+100|Al-'Adiyat|العاديات‎‎|Berlari kencang|11|Mekkah|14
+101|Al-Qari'ah|القارعة‎‎|Hari Kiamat|11|Mekkah|30
+102|At-Takasur|التكاثر‎‎|Bermegah-megahan|8|Mekkah|16
+103|Al-'Asr|العصر|Masa/Waktu|3|Mekkah|13
+104|Al-Humazah|الهمزة‎‎|Pengumpat|9|Mekkah|32
+105|Al-Fil|الفيل|Gajah|5|Mekkah|19
+106|Quraisy|قريش|Suku Quraisy|4|Mekkah|29
+107|Al-Ma’un|الماعون|Barang-barang yang berguna|7|Mekkah|17
+108|Al-Kausar|الكوثر|Nikmat yang berlimpah|3|Mekkah|15
+109|Al-Kafirun|الكافرون|Orang-orang kafir|6|Mekkah|18
+110|An-Nasr|النصر‎‎|Pertolongan|3|Madinah|114
+111|Al-Lahab|اللهب‎‎|Gejolak Api/ Sabut|5|Mekkah|6
+112|Al-Ikhlas|الإخلاص‎‎|Ikhlas|4|Mekkah|22
+113|Al-Falaq|الفلق|Waktu Subuh|5|Mekkah|20
+114|An-Nas|الناس|Umat Manusia|6|Mekkah|21

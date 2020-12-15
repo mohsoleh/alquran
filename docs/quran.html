@@ -13,7 +13,7 @@
 
 <title>Al Quran</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -22,6 +22,14 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.16/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -310,62 +318,30 @@ $(document).ready(function () {
 </div>
 
 
-<pre><code>## &#39;data.frame&#39;:    6236 obs. of  3 variables:
-##  $ surat: int  1 1 1 1 1 1 1 2 2 2 ...
-##  $ ayat : int  1 2 3 4 5 6 7 1 2 3 ...
-##  $ text : chr  &quot;بسم الله الرحمن الرحيم&quot; &quot;الحمد لله رب العالمين&quot; &quot;الرحمن الرحيم&quot; &quot;مالك يوم الدين&quot; ...</code></pre>
-<pre><code>## &lt;&lt;SimpleCorpus&gt;&gt;
-## Metadata:  corpus specific: 1, document level (indexed): 0
-## Content:  documents: 5
-## 
-## [1] بسم الله الرحمن الرحيم الحمد لله رب العالمين  الرحمن الرحيم         
-## [4] مالك يوم الدين         إياك نعبد وإياك نستعين</code></pre>
-<pre><code>## &lt;&lt;DocumentTermMatrix (documents: 6236, terms: 14867)&gt;&gt;
-## Non-/sparse entries: 73993/92636619
-## Sparsity           : 100%
-## Maximal term length: 11
-## Weighting          : term frequency (tf)</code></pre>
-<pre><code>## &lt;&lt;DocumentTermMatrix (documents: 7, terms: 6)&gt;&gt;
-## Non-/sparse entries: 0/42
-## Sparsity           : 100%
-## Maximal term length: 6
-## Weighting          : term frequency (tf)
-## Sample             :
-##     Terms
-## Docs وجه ولله اتخذ سبحانه قانتون ولدا
-##    1   0    0    0      0      0    0
-##    2   0    0    0      0      0    0
-##    3   0    0    0      0      0    0
-##    4   0    0    0      0      0    0
-##    5   0    0    0      0      0    0
-##    6   0    0    0      0      0    0
-##    7   0    0    0      0      0    0</code></pre>
-<pre><code>##   [1] &quot;الرحمن&quot;   &quot;الرحيم&quot;   &quot;الله&quot;     &quot;بسم&quot;      &quot;رب&quot;       &quot;لله&quot;     
-##   [7] &quot;يوم&quot;      &quot;الذين&quot;    &quot;عليهم&quot;    &quot;ولا&quot;      &quot;الكتاب&quot;   &quot;ذلك&quot;     
-##  [13] &quot;فيه&quot;      &quot;لا&quot;       &quot;بما&quot;      &quot;من&quot;       &quot;هم&quot;       &quot;والذين&quot;  
-##  [19] &quot;وما&quot;      &quot;أولئك&quot;    &quot;ربهم&quot;     &quot;على&quot;      &quot;أم&quot;       &quot;إن&quot;      
-##  [25] &quot;كفروا&quot;    &quot;لم&quot;       &quot;عذاب&quot;     &quot;الناس&quot;    &quot;بالله&quot;    &quot;ومن&quot;     
-##  [31] &quot;آمنوا&quot;    &quot;إلا&quot;      &quot;في&quot;       &quot;كانوا&quot;    &quot;إنما&quot;     &quot;الأرض&quot;   
-##  [37] &quot;قالوا&quot;    &quot;لهم&quot;      &quot;وإذا&quot;     &quot;ولكن&quot;     &quot;إلى&quot;      &quot;إنا&quot;     
-##  [43] &quot;الذي&quot;     &quot;فلما&quot;     &quot;ما&quot;       &quot;أو&quot;       &quot;السماء&quot;   &quot;والله&quot;   
-##  [49] &quot;شيء&quot;      &quot;كل&quot;       &quot;ولو&quot;      &quot;أيها&quot;     &quot;ربكم&quot;     &quot;يا&quot;      
-##  [55] &quot;به&quot;       &quot;فلا&quot;      &quot;لكم&quot;      &quot;كنتم&quot;     &quot;مما&quot;      &quot;وإن&quot;     
-##  [61] &quot;النار&quot;    &quot;فإن&quot;      &quot;أن&quot;       &quot;فيها&quot;     &quot;قبل&quot;      &quot;هذا&quot;     
-##  [67] &quot;وهم&quot;      &quot;الحق&quot;     &quot;بعد&quot;      &quot;ثم&quot;       &quot;عليم&quot;     &quot;هو&quot;      
-##  [73] &quot;وهو&quot;      &quot;إني&quot;      &quot;ربك&quot;      &quot;قال&quot;      &quot;السماوات&quot; &quot;والأرض&quot;  
-##  [79] &quot;إنه&quot;      &quot;عليه&quot;     &quot;عليكم&quot;    &quot;عن&quot;       &quot;موسى&quot;     &quot;خير&quot;     
-##  [85] &quot;عند&quot;      &quot;قوم&quot;      &quot;حتى&quot;      &quot;قد&quot;       &quot;منكم&quot;     &quot;ولقد&quot;    
-##  [91] &quot;كان&quot;      &quot;منهم&quot;     &quot;قل&quot;       &quot;الدنيا&quot;   &quot;بل&quot;       &quot;يشاء&quot;    
-##  [97] &quot;له&quot;       &quot;ربنا&quot;     &quot;إذ&quot;       &quot;إذا&quot;</code></pre>
-<pre><code>##    من  الله    في    ما    إن    لا الذين   على   إلا   ولا 
-##  2763  2265  1185  1010   966   812   810   670   664   658</code></pre>
-<pre class="r"><code>wfplot = subset(wf, freq&gt;300)
-ggplot(wfplot, aes(word, freq)) +
-  geom_bar(stat = &quot;identity&quot;) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))</code></pre>
-<p><img src="quran_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<p><img src="quran_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p><img src="quran_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div id="section" class="section level2 tabset">
+<h2></h2>
+<div id="surat" class="section level3">
+<h3>Surat</h3>
+<div id="htmlwidget-7abb07edf98ac6c3e81a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7abb07edf98ac6c3e81a">{"x":{"filter":"none","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114],["Al-Fatihah","Al-Baqarah","Ali 'Imran","An-Nisa'","Al-Ma'idah","Al-An'am","Al-A’raf","Al-Anfal","At-Taubah","Yunus","Hud","Yusuf","Ar-Ra’d","Ibrahim","Al-Hijr","An-Nahl","Al-Isra'","Al-Kahf","Maryam","Ta Ha","Al-Anbiya","Al-Hajj","Al-Mu’minun","An-Nur","Al-Furqan","Asy-Syu'ara'","An-Naml","Al-Qasas","Al-'Ankabut","Ar-Rum","Luqman","As-Sajdah","Al-Ahzab","Saba’","Fatir","Ya Sin","As-Saffat","Sad","Az-Zumar","Ghafir","Fussilat","Asy-Syura","Az-Zukhruf","Ad-Dukhan","Al-Jasiyah","Al-Ahqaf","Muhammad","Al-Fath","Al-Hujurat","Qaf","Az-Zariyat","At-Tur","An-Najm","Al-Qamar","Ar-Rahman","Al-Waqi’ah","Al-Hadid","Al-Mujadilah","Al-Hasyr","Al-Mumtahanah","As-Saff","Al-Jumu’ah","Al-Munafiqun","At-Tagabun","At-Talaq","At-Tahrim","Al-Mulk","Al-Qalam","Al-Haqqah","Al-Ma’arij","Nuh","Al-Jinn","Al-Muzzammil","Al-Muddassir","Al-Qiyamah","Al-Insan","Al-Mursalat","An-Naba’","An-Nazi’at","'Abasa","At-Takwir","Al-Infitar","Al-Tatfif","Al-Insyiqaq","Al-Buruj","At-Tariq","Al-A’la","Al-Gasyiyah","Al-Fajr","Al-Balad","Asy-Syams","Al-Lail","Ad-Duha","Al-Insyirah","At-Tin","Al-'Alaq","Al-Qadr","Al-Bayyinah","Az-Zalzalah","Al-'Adiyat","Al-Qari'ah","At-Takasur","Al-'Asr","Al-Humazah","Al-Fil","Quraisy","Al-Ma’un","Al-Kausar","Al-Kafirun","An-Nasr","Al-Lahab","Al-Ikhlas","Al-Falaq","An-Nas"],["الفاتحة","البقرة","آل عمران","النّساء","المائدة","الانعام","الأعراف","الأنفال","التوبة‎‎","يونس","هود","يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحجّ","المؤمنون","النور","الفرقان","الشعراء","النمل","القصص","العنكبوت","الروم","لقمان","السجدة","الْأحزاب","سبأ","فاطر","يس","الصافات","ص","الزمر","غافر","فصلت","الشورى","الزخرف","الدخان","الجاثية","الَأحقاف","محمد","الفتح","الحجرات","ق","الذاريات","الطور","النجم","القمر","الرحمن","الواقعة","الحديد","المجادلة","الحشر","الممتحنة","الصف","الجمعة","المنافقون","التغابن","الطلاق","التحريم","الملك","القلم","الحآقة","المعارج","نوح","الجن","المزمل","المدثر","القيامة","الإنسان","المرسلات","النبأ","النازعات","عبس","التكوير","الإنفطار","المطففين","الإنشقاق","البروج","الطارق","الأعلى","الغاشية","الفجر","البلد","الشمس","اليل","الضحى‎‎","الإنشراح‎‎","التينِ","العلق","القدرِ","البينة","الزلزلة‎‎","العاديات‎‎","القارعة‎‎","التكاثر‎‎","العصر","الهمزة‎‎","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر‎‎","اللهب‎‎","الإخلاص‎‎","الفلق","الناس"],["Pembukaan","Sapi Betina","Keluarga 'Imran","Wanita","Jamuan (hidangan makanan)","Hewan Ternak","Tempat yang tertinggi","Harta rampasan perang","Pengampunan","Nabi Yunus","Nabi Hud","Nabi Yusuf","Guruh (petir)","Nabi Ibrahim","Gunung Al Hijr","Lebah","Perjalanan Malam","Penghuni-penghuni Gua","Maryam (Maria)","Ta Ha","Nabi-Nabi","Haji","Orang-orang mukmin","Cahaya","Pembeda","Penyair","Semut","Kisah","Laba-laba","Bangsa Romawi","Keluarga Luqman","Sajdah","Golongan-Golongan yang bersekutu","Kaum Saba'","Pencipta","Yaasiin","Barisan-barisan","Shaad","Rombongan-rombongan","Yang mengampuni","Yang dijelaskan","Musyawarah","Perhiasan","Kabut","Yang bertekuk lutut","Bukit-bukit pasir","Nabi Muhammad","Kemenangan","Kamar-kamar","Qaaf45","Angin yang menerbangkan","Bukit","Bintang","Bulan","Yang Maha Pemurah","Hari Kiamat","Besi","Wanita yang mengajukan gugatan","Pengusiran","Wanita yang diuji","Satu barisan","Hari Jum’at","Orang-orang yang munafik","Hari dinampakkan kesalahan-kesalahan","Talak","Mengharamkan","Kerajaan","Pena","Hari kiamat","Tempat naik","Nabi Nuh","Jin","Orang yang berselimut","Orang yang berkemul","Kiamat","Manusia","Malaikat-Malaikat Yang Diutus","Berita besar","Malaikat-Malaikat Yang Mencabut","Ia Bermuka masam","Menggulung","Terbelah","Orang-orang yang curang","Terbelah","Gugusan bintang","Yang datang di malam hari","Yang paling tinggi","Hari Pembalasan","Fajar","Negeri","Matahari","Malam","Waktu matahari sepenggalahan naik (Dhuha)","Melapangkan","Buah Tin","Segumpal Darah","Kemuliaan","Pembuktian","Kegoncangan","Berlari kencang","Hari Kiamat","Bermegah-megahan","Masa/Waktu","Pengumpat","Gajah","Suku Quraisy","Barang-barang yang berguna","Nikmat yang berlimpah","Orang-orang kafir","Pertolongan","Gejolak Api/ Sabut","Ikhlas","Waktu Subuh","Umat Manusia"],["7","286","200","176","120","165","206","75","129","109","123","111","43","52","99","128","111","110","98","135","112","78","118","64","77","227","93","88","69","60","34","30","73","54","45","83","182","88","75","85","54","53","89","59","37","35","38","29","18","Mekkah","60","49","62","55","78","96","29","22","24","13","14","11","11","18","12","12","30","52","52","44","28","28","20","56","40","31","50","40","46","42","29","19","36","25","22","17","19","26","30","20","15","21","11","8","8","19","5","8","8","11","11","8","3","9","5","4","7","3","6","3","5","4","5","6"],["Mekkah","Madinah","Madinah","Madinah","Madinah","Mekkah","Mekkah","Madinah","Madinah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Madinah &amp; Makkah","Mekkah","Madinah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Madinah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Madinah","Madinah","Madinah","34","Mekkah","Mekkah","Mekkah","Mekkah","Madinah &amp; Mekkah","Mekkah","Madinah","Madinah","Madinah","Madinah","Madinah","Madinah","Madinah","Madinah","Madinah","Madinah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Madinah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Madinah","Madinah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Mekkah","Madinah","Mekkah","Mekkah","Mekkah","Mekkah"],[5,87,89,92,112,55,39,88,113,51,52,53,96,72,54,70,50,69,44,45,73,103,74,102,42,47,48,49,85,84,57,75,90,58,43,41,56,38,59,60,61,62,63,64,65,66,95,111,106,null,67,76,23,37,97,46,94,105,101,91,109,110,104,108,99,107,77,2,78,79,71,40,3,4,31,98,33,80,81,24,7,82,86,83,27,36,8,68,10,35,26,9,11,12,28,1,25,100,93,14,30,16,13,32,19,29,17,15,18,114,6,22,20,21]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>surat<\/th>\n      <th>indo<\/th>\n      <th>arab<\/th>\n      <th>arti<\/th>\n      <th>ayat<\/th>\n      <th>turun<\/th>\n      <th>urutan<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[0,6]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="terjemahan" class="section level3">
+<h3>Terjemahan</h3>
+<pre class="r"><code>str(terjemah)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    3531 obs. of  3 variables:
+##  $ surat   : int  1 1 1 1 1 1 1 2 2 2 ...
+##  $ ayat    : int  1 2 3 4 5 6 7 1 2 3 ...
+##  $ terjemah: chr  &quot;Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang.&quot; &quot;Segala puji bagi Allah, Tuhan semesta alam.&quot; &quot;Maha Pemurah lagi Maha Penyayang.&quot; &quot;Yang menguasai di Hari Pembalasan.&quot; ...</code></pre>
+</div>
+<div id="tafsir-jalalain" class="section level3">
+<h3>Tafsir (Jalalain)</h3>
+<pre class="r"><code>str(tafsir)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    3448 obs. of  3 variables:
+##  $ surat : int  1 1 1 1 1 1 1 2 2 2 ...
+##  $ ayat  : int  1 2 3 4 5 6 7 1 2 3 ...
+##  $ tafsir: chr  &quot;(Dengan nama Allah Yang Maha Pemurah lagi Maha Penyayang)&quot; &quot;(Segala puji bagi Allah) Lafal ayat ini merupakan kalimat berita, dimaksud sebagai ungkapan pujian kepada Allah&quot;| __truncated__ &quot;(Yang Maha Pemurah lagi Maha Penyayang) yaitu yang mempunyai rahmat. Rahmat ialah menghendaki kebaikan bagi ora&quot;| __truncated__ &quot;(Yang menguasai hari pembalasan) di hari kiamat kelak. Lafal &#39;yaumuddiin&#39; disebutkan secara khusus, karena di h&quot;| __truncated__ ...</code></pre>
+</div>
+</div>
 
 
 

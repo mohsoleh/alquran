@@ -310,7 +310,70 @@ $(document).ready(function () {
 </div>
 
 
-
+<pre><code>## &#39;data.frame&#39;:    6236 obs. of  3 variables:
+##  $ surat: int  1 1 1 1 1 1 1 2 2 2 ...
+##  $ ayat : int  1 2 3 4 5 6 7 1 2 3 ...
+##  $ text : chr  &quot;بسم الله الرحمن الرحيم&quot; &quot;الحمد لله رب العالمين&quot; &quot;الرحمن الرحيم&quot; &quot;مالك يوم الدين&quot; ...</code></pre>
+<pre><code>## &#39;data.frame&#39;:    114 obs. of  7 variables:
+##  $ surat : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ indo  : chr  &quot;Al-Fatihah&quot; &quot;Al-Baqarah&quot; &quot;Ali &#39;Imran&quot; &quot;An-Nisa&#39;&quot; ...
+##  $ arab  : chr  &quot;الفاتحة&quot; &quot;البقرة&quot; &quot;آل عمران&quot; &quot;النّساء&quot; ...
+##  $ arti  : chr  &quot;Pembukaan&quot; &quot;Sapi Betina&quot; &quot;Keluarga &#39;Imran&quot; &quot;Wanita&quot; ...
+##  $ ayat  : chr  &quot;7&quot; &quot;286&quot; &quot;200&quot; &quot;176&quot; ...
+##  $ turun : chr  &quot;Mekkah&quot; &quot;Madinah&quot; &quot;Madinah&quot; &quot;Madinah&quot; ...
+##  $ urutan: int  5 87 89 92 112 55 39 88 113 51 ...</code></pre>
+<pre><code>## &lt;&lt;SimpleCorpus&gt;&gt;
+## Metadata:  corpus specific: 1, document level (indexed): 0
+## Content:  documents: 5
+## 
+## [1] بسم الله الرحمن الرحيم الحمد لله رب العالمين  الرحمن الرحيم         
+## [4] مالك يوم الدين         إياك نعبد وإياك نستعين</code></pre>
+<pre><code>## &lt;&lt;DocumentTermMatrix (documents: 6236, terms: 14867)&gt;&gt;
+## Non-/sparse entries: 73993/92636619
+## Sparsity           : 100%
+## Maximal term length: 11
+## Weighting          : term frequency (tf)</code></pre>
+<pre><code>## &lt;&lt;DocumentTermMatrix (documents: 7, terms: 6)&gt;&gt;
+## Non-/sparse entries: 0/42
+## Sparsity           : 100%
+## Maximal term length: 6
+## Weighting          : term frequency (tf)
+## Sample             :
+##     Terms
+## Docs وجه ولله اتخذ سبحانه قانتون ولدا
+##    1   0    0    0      0      0    0
+##    2   0    0    0      0      0    0
+##    3   0    0    0      0      0    0
+##    4   0    0    0      0      0    0
+##    5   0    0    0      0      0    0
+##    6   0    0    0      0      0    0
+##    7   0    0    0      0      0    0</code></pre>
+<pre><code>##   [1] &quot;الرحمن&quot;   &quot;الرحيم&quot;   &quot;الله&quot;     &quot;بسم&quot;      &quot;رب&quot;       &quot;لله&quot;     
+##   [7] &quot;يوم&quot;      &quot;الذين&quot;    &quot;عليهم&quot;    &quot;ولا&quot;      &quot;الكتاب&quot;   &quot;ذلك&quot;     
+##  [13] &quot;فيه&quot;      &quot;لا&quot;       &quot;بما&quot;      &quot;من&quot;       &quot;هم&quot;       &quot;والذين&quot;  
+##  [19] &quot;وما&quot;      &quot;أولئك&quot;    &quot;ربهم&quot;     &quot;على&quot;      &quot;أم&quot;       &quot;إن&quot;      
+##  [25] &quot;كفروا&quot;    &quot;لم&quot;       &quot;عذاب&quot;     &quot;الناس&quot;    &quot;بالله&quot;    &quot;ومن&quot;     
+##  [31] &quot;آمنوا&quot;    &quot;إلا&quot;      &quot;في&quot;       &quot;كانوا&quot;    &quot;إنما&quot;     &quot;الأرض&quot;   
+##  [37] &quot;قالوا&quot;    &quot;لهم&quot;      &quot;وإذا&quot;     &quot;ولكن&quot;     &quot;إلى&quot;      &quot;إنا&quot;     
+##  [43] &quot;الذي&quot;     &quot;فلما&quot;     &quot;ما&quot;       &quot;أو&quot;       &quot;السماء&quot;   &quot;والله&quot;   
+##  [49] &quot;شيء&quot;      &quot;كل&quot;       &quot;ولو&quot;      &quot;أيها&quot;     &quot;ربكم&quot;     &quot;يا&quot;      
+##  [55] &quot;به&quot;       &quot;فلا&quot;      &quot;لكم&quot;      &quot;كنتم&quot;     &quot;مما&quot;      &quot;وإن&quot;     
+##  [61] &quot;النار&quot;    &quot;فإن&quot;      &quot;أن&quot;       &quot;فيها&quot;     &quot;قبل&quot;      &quot;هذا&quot;     
+##  [67] &quot;وهم&quot;      &quot;الحق&quot;     &quot;بعد&quot;      &quot;ثم&quot;       &quot;عليم&quot;     &quot;هو&quot;      
+##  [73] &quot;وهو&quot;      &quot;إني&quot;      &quot;ربك&quot;      &quot;قال&quot;      &quot;السماوات&quot; &quot;والأرض&quot;  
+##  [79] &quot;إنه&quot;      &quot;عليه&quot;     &quot;عليكم&quot;    &quot;عن&quot;       &quot;موسى&quot;     &quot;خير&quot;     
+##  [85] &quot;عند&quot;      &quot;قوم&quot;      &quot;حتى&quot;      &quot;قد&quot;       &quot;منكم&quot;     &quot;ولقد&quot;    
+##  [91] &quot;كان&quot;      &quot;منهم&quot;     &quot;قل&quot;       &quot;الدنيا&quot;   &quot;بل&quot;       &quot;يشاء&quot;    
+##  [97] &quot;له&quot;       &quot;ربنا&quot;     &quot;إذ&quot;       &quot;إذا&quot;</code></pre>
+<pre><code>##    من  الله    في    ما    إن    لا الذين   على   إلا   ولا 
+##  2763  2265  1185  1010   966   812   810   670   664   658</code></pre>
+<pre class="r"><code>wfplot = subset(wf, freq&gt;300)
+ggplot(wfplot, aes(word, freq)) +
+  geom_bar(stat = &quot;identity&quot;) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))</code></pre>
+<p><img src="visual_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="visual_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="visual_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 
 
 
