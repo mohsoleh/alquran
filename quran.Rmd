@@ -1,0 +1,105 @@
+---
+title: "Al Quran"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE, message=FALSE}
+q = read.csv("/home/s0leh/Documents/UIN/2020-2021/Ganjil/Pengenalan Data Sains/quran.txt", header=F, stringsAsFactor=F, encoding="UTF-8", sep="|")
+
+colnames(q) = c("surat", "ayat", "text")
+```
+
+```{r echo=FALSE, message=FALSE}
+str(q)
+```
+
+```{r echo=FALSE, message=FALSE}
+library(tm)
+library(knitr)
+```
+
+```{r echo=FALSE, message=FALSE}
+qCorpus = Corpus(VectorSource(q$text))
+
+inspect(qCorpus[1:5])
+```
+
+```{r echo=FALSE, message=FALSE}
+qTerms = DocumentTermMatrix(qCorpus)
+qTerms
+```
+
+```{r echo=FALSE, message=FALSE}
+inspect(qTerms[1:7,1000:1005])
+```
+
+```{r echo=FALSE, message=FALSE}
+findFreqTerms(qTerms, 100)
+```
+
+```{r echo=FALSE, message=FALSE}
+freq = sort(colSums(as.matrix(qTerms)), decreasing = T)
+head(freq, 10)
+```
+
+```{r echo=FALSE, message=FALSE}
+wf = data.frame(word = names(freq), freq = freq)
+```
+
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+```
+
+```{r}
+wfplot = subset(wf, freq>300)
+ggplot(wfplot, aes(word, freq)) +
+  geom_bar(stat = "identity") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r echo=FALSE, message=FALSE}
+library(wordcloud)
+```
+```{r echo=FALSE, message=FALSE}
+set.seed(114)
+wordcloud(names(freq), freq, min.freq = 50, scale = c(5,.5), colors=brewer.pal(6,"Dark2"), rot.per=0.2)
+```
+
+```{r echo=FALSE, message=FALSE}
+words = as.matrix(colnames(qTerms))
+wlen = data.frame(nletters = nchar(words))
+
+ggplot(wlen, aes(x=nletters)) +
+  geom_histogram(binwidth = 1) +
+  geom_vline(xintercept = mean(nchar(words)),
+             colour = "green", size = 1, alpha = .5) +
+  labs(x="Number of Latters", y="Number of Words")
+```
+
+```{r echo=FALSE, message=FALSE}
+library(dplyr)
+library(stringr)
+#library(qdap)
+```
+
+```{r echo=FALSE, message=FALSE}
+# letter = str_split(words,"")
+# letter = sapply(letter, function(x) x[-1])
+# letter = unlist(letter)
+# letter = dist_tab(letter)
+# 
+# letterMutate = mutate(letter, Letter = factor(letter$interval, levels=letter$interval[order(letter$freq)]))
+# ggplot(letterMutate, aes(letterMutate$Latter, weight=percent)) +
+#   geom_bar()+
+#   coord_flip()+
+#   ylab("Proportion")+
+#   xlab("Letter")+
+#   scale_y_continuous(breaks=seq(0,12,2),
+#                      label=function(x) paste0(x,"%"),
+#                      expand = c(0,0), limits = c(0,12))
+
+```

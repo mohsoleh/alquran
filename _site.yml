@@ -5,6 +5,10 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Al Quran"
+      href: quran.html
+    - text: "Visualisasi"
+      href: visual.html
     - text: "About Us"
       href: about.html
 output:
