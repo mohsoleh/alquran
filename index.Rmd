@@ -86,7 +86,7 @@ library(stringr)
 #library(qdap)
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 # letter = str_split(words,"")
 # letter = sapply(letter, function(x) x[-1])
 # letter = unlist(letter)
