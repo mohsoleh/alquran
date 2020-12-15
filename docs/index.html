@@ -357,20 +357,6 @@ ggplot(wfplot, aes(word, freq)) +
 <p><img src="index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p><img src="index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p><img src="index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<pre class="r"><code># letter = str_split(words,&quot;&quot;)
-# letter = sapply(letter, function(x) x[-1])
-# letter = unlist(letter)
-# letter = dist_tab(letter)
-# 
-# letterMutate = mutate(letter, Letter = factor(letter$interval, levels=letter$interval[order(letter$freq)]))
-# ggplot(letterMutate, aes(letterMutate$Latter, weight=percent)) +
-#   geom_bar()+
-#   coord_flip()+
-#   ylab(&quot;Proportion&quot;)+
-#   xlab(&quot;Letter&quot;)+
-#   scale_y_continuous(breaks=seq(0,12,2),
-#                      label=function(x) paste0(x,&quot;%&quot;),
-#                      expand = c(0,0), limits = c(0,12))</code></pre>
 
 
 

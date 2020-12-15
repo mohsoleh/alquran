@@ -19,6 +19,7 @@ str(q)
 
 ```{r echo=FALSE, message=FALSE}
 library(tm)
+library(knitr)
 ```
 
 ```{r echo=FALSE, message=FALSE}
