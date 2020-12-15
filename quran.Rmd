@@ -3,19 +3,42 @@ title: "Al Quran"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, results='asis'}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r echo=FALSE, message=FALSE}
-q = read.csv("data/quran.txt", header=F, stringsAsFactor=F, encoding="UTF-8", sep="|")
-s = read.csv("data/surat.txt", header=F, stringsAsFactor=F, encoding="UTF-8", sep="|")
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+quran = read.csv("data/quran.txt", header=F, stringsAsFactor=F, encoding="UTF-8", sep="|")
+surat = read.csv("data/surat.txt", header=F, stringsAsFactor=F, encoding="UTF-8", sep="|")
+terjemah = read.csv("data/id-terjemah.txt", header=F, stringsAsFactor=F, encoding="UTF-8", sep="|")
+tafsir = read.csv("data/id-jalalayn.txt", header=F, stringsAsFactor=F, encoding="UTF-8", sep="|")
 
-colnames(q) = c("surat", "ayat", "text")
-colnames(s) = c("surat", "indo", "arab", "arti", "ayat", "turun", "urutan")
+colnames(quran) = c("surat", "ayat", "text")
+colnames(surat) = c("surat", "indo", "arab", "arti", "ayat", "turun", "urutan")
+colnames(terjemah) = c("surat", "ayat", "terjemah")
+colnames(tafsir) = c("surat", "ayat", "tafsir")
 ```
 
+## {.tabset}
+
+### Surat
+
 ```{r echo=FALSE, message=FALSE}
-str(q)
-str(s)
+library(DT)
+
+datatable(surat, options = list(
+  pageLength = 10, autoWidth = TRUE
+), rownames = FALSE)
+```
+
+### Terjemahan
+
+```{r}
+str(terjemah)
+```
+
+### Tafsir (Jalalain)
+
+```{r}
+str(tafsir)
 ```
