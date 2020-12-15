@@ -7,49 +7,49 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 q = read.csv("/home/s0leh/Documents/UIN/2020-2021/Ganjil/Pengenalan Data Sains/quran.txt", header=F, stringsAsFactor=F, encoding="UTF-8", sep="|")
 
 colnames(q) = c("surat", "ayat", "text")
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 str(q)
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 library(tm)
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 qCorpus = Corpus(VectorSource(q$text))
 
 inspect(qCorpus[1:5])
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 qTerms = DocumentTermMatrix(qCorpus)
 qTerms
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 inspect(qTerms[1:7,1000:1005])
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 findFreqTerms(qTerms, 100)
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 freq = sort(colSums(as.matrix(qTerms)), decreasing = T)
 head(freq, 10)
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 wf = data.frame(word = names(freq), freq = freq)
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 library(ggplot2)
 ```
 
@@ -60,15 +60,15 @@ ggplot(wfplot, aes(word, freq)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 library(wordcloud)
 ```
-```{r}
+```{r echo=FALSE, message=FALSE}
 set.seed(114)
 wordcloud(names(freq), freq, min.freq = 50, scale = c(5,.5), colors=brewer.pal(6,"Dark2"), rot.per=0.2)
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 words = as.matrix(colnames(qTerms))
 wlen = data.frame(nletters = nchar(words))
 
@@ -79,7 +79,7 @@ ggplot(wlen, aes(x=nletters)) +
   labs(x="Number of Latters", y="Number of Words")
 ```
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 library(dplyr)
 library(stringr)
 #library(qdap)

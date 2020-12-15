@@ -301,33 +301,21 @@ $(document).ready(function () {
 </div>
 
 
-<pre class="r"><code>q = read.csv(&quot;/home/s0leh/Documents/UIN/2020-2021/Ganjil/Pengenalan Data Sains/quran.txt&quot;, header=F, stringsAsFactor=F, encoding=&quot;UTF-8&quot;, sep=&quot;|&quot;)
-
-colnames(q) = c(&quot;surat&quot;, &quot;ayat&quot;, &quot;text&quot;)</code></pre>
-<pre class="r"><code>str(q)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    6236 obs. of  3 variables:
 ##  $ surat: int  1 1 1 1 1 1 1 2 2 2 ...
 ##  $ ayat : int  1 2 3 4 5 6 7 1 2 3 ...
 ##  $ text : chr  &quot;بسم الله الرحمن الرحيم&quot; &quot;الحمد لله رب العالمين&quot; &quot;الرحمن الرحيم&quot; &quot;مالك يوم الدين&quot; ...</code></pre>
-<pre class="r"><code>library(tm)</code></pre>
-<pre><code>## Loading required package: NLP</code></pre>
-<pre class="r"><code>qCorpus = Corpus(VectorSource(q$text))
-
-inspect(qCorpus[1:5])</code></pre>
 <pre><code>## &lt;&lt;SimpleCorpus&gt;&gt;
 ## Metadata:  corpus specific: 1, document level (indexed): 0
 ## Content:  documents: 5
 ## 
 ## [1] بسم الله الرحمن الرحيم الحمد لله رب العالمين  الرحمن الرحيم         
 ## [4] مالك يوم الدين         إياك نعبد وإياك نستعين</code></pre>
-<pre class="r"><code>qTerms = DocumentTermMatrix(qCorpus)
-qTerms</code></pre>
 <pre><code>## &lt;&lt;DocumentTermMatrix (documents: 6236, terms: 14867)&gt;&gt;
 ## Non-/sparse entries: 73993/92636619
 ## Sparsity           : 100%
 ## Maximal term length: 11
 ## Weighting          : term frequency (tf)</code></pre>
-<pre class="r"><code>inspect(qTerms[1:7,1000:1005])</code></pre>
 <pre><code>## &lt;&lt;DocumentTermMatrix (documents: 7, terms: 6)&gt;&gt;
 ## Non-/sparse entries: 0/42
 ## Sparsity           : 100%
@@ -343,7 +331,6 @@ qTerms</code></pre>
 ##    5   0    0    0      0      0    0
 ##    6   0    0    0      0      0    0
 ##    7   0    0    0      0      0    0</code></pre>
-<pre class="r"><code>findFreqTerms(qTerms, 100)</code></pre>
 <pre><code>##   [1] &quot;الرحمن&quot;   &quot;الرحيم&quot;   &quot;الله&quot;     &quot;بسم&quot;      &quot;رب&quot;       &quot;لله&quot;     
 ##   [7] &quot;يوم&quot;      &quot;الذين&quot;    &quot;عليهم&quot;    &quot;ولا&quot;      &quot;الكتاب&quot;   &quot;ذلك&quot;     
 ##  [13] &quot;فيه&quot;      &quot;لا&quot;       &quot;بما&quot;      &quot;من&quot;       &quot;هم&quot;       &quot;والذين&quot;  
@@ -361,52 +348,15 @@ qTerms</code></pre>
 ##  [85] &quot;عند&quot;      &quot;قوم&quot;      &quot;حتى&quot;      &quot;قد&quot;       &quot;منكم&quot;     &quot;ولقد&quot;    
 ##  [91] &quot;كان&quot;      &quot;منهم&quot;     &quot;قل&quot;       &quot;الدنيا&quot;   &quot;بل&quot;       &quot;يشاء&quot;    
 ##  [97] &quot;له&quot;       &quot;ربنا&quot;     &quot;إذ&quot;       &quot;إذا&quot;</code></pre>
-<pre class="r"><code>freq = sort(colSums(as.matrix(qTerms)), decreasing = T)
-head(freq, 10)</code></pre>
 <pre><code>##    من  الله    في    ما    إن    لا الذين   على   إلا   ولا 
 ##  2763  2265  1185  1010   966   812   810   670   664   658</code></pre>
-<pre class="r"><code>wf = data.frame(word = names(freq), freq = freq)</code></pre>
-<pre class="r"><code>library(ggplot2)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;ggplot2&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:NLP&#39;:
-## 
-##     annotate</code></pre>
 <pre class="r"><code>wfplot = subset(wf, freq&gt;300)
 ggplot(wfplot, aes(word, freq)) +
   geom_bar(stat = &quot;identity&quot;) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<pre class="r"><code>library(wordcloud)</code></pre>
-<pre><code>## Loading required package: RColorBrewer</code></pre>
-<pre class="r"><code>set.seed(114)
-wordcloud(names(freq), freq, min.freq = 50, scale = c(5,.5), colors=brewer.pal(6,&quot;Dark2&quot;), rot.per=0.2)</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<pre class="r"><code>words = as.matrix(colnames(qTerms))
-wlen = data.frame(nletters = nchar(words))
-
-ggplot(wlen, aes(x=nletters)) +
-  geom_histogram(binwidth = 1) +
-  geom_vline(xintercept = mean(nchar(words)),
-             colour = &quot;green&quot;, size = 1, alpha = .5) +
-  labs(x=&quot;Number of Latters&quot;, y=&quot;Number of Words&quot;)</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<pre class="r"><code>library(dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library(stringr)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;stringr&#39;</code></pre>
-<pre><code>## The following object is masked _by_ &#39;.GlobalEnv&#39;:
-## 
-##     words</code></pre>
-<pre class="r"><code>#library(qdap)</code></pre>
 <pre class="r"><code># letter = str_split(words,&quot;&quot;)
 # letter = sapply(letter, function(x) x[-1])
 # letter = unlist(letter)
