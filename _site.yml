@@ -1,0 +1,11 @@
+name: "Al Qur'an"
+output_dir: "docs"
+navbar:
+  title: "Al Qur'an"
+  left:
+    - text: "Home"
+      href: index.html
+output:
+  html_document:
+    theme: cosmo
+theme: cosmo
