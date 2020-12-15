@@ -16,8 +16,8 @@ colnames(s) = c("surat", "indo", "arab", "arti", "ayat", "turun", "urutan")
 ```
 
 ```{r echo=FALSE, message=FALSE}
-str(q)
-str(s)
+# str(q)
+# str(s)
 ```
 
 ```{r echo=FALSE, message=FALSE}
@@ -28,25 +28,25 @@ library(knitr)
 ```{r echo=FALSE, message=FALSE}
 qCorpus = Corpus(VectorSource(q$text))
 
-inspect(qCorpus[1:5])
+# inspect(qCorpus[1:5])
 ```
 
 ```{r echo=FALSE, message=FALSE}
 qTerms = DocumentTermMatrix(qCorpus)
-qTerms
+# qTerms
 ```
 
 ```{r echo=FALSE, message=FALSE}
-inspect(qTerms[1:7,1000:1005])
+# inspect(qTerms[1:7,1000:1005])
 ```
 
 ```{r echo=FALSE, message=FALSE}
-findFreqTerms(qTerms, 100)
+# findFreqTerms(qTerms, 100)
 ```
 
 ```{r echo=FALSE, message=FALSE}
 freq = sort(colSums(as.matrix(qTerms)), decreasing = T)
-head(freq, 10)
+# head(freq, 10)
 ```
 
 ```{r echo=FALSE, message=FALSE}
@@ -57,12 +57,18 @@ wf = data.frame(word = names(freq), freq = freq)
 library(ggplot2)
 ```
 
-```{r}
+## {.tabset}
+
+### Freq
+
+```{r echo=FALSE, message=FALSE}
 wfplot = subset(wf, freq>300)
 ggplot(wfplot, aes(word, freq)) +
   geom_bar(stat = "identity") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
+### Wordcloud
 
 ```{r echo=FALSE, message=FALSE}
 library(wordcloud)
@@ -71,6 +77,8 @@ library(wordcloud)
 set.seed(114)
 wordcloud(names(freq), freq, min.freq = 50, scale = c(5,.5), colors=brewer.pal(6,"Dark2"), rot.per=0.2)
 ```
+
+### Latters and Words
 
 ```{r echo=FALSE, message=FALSE}
 words = as.matrix(colnames(qTerms))
